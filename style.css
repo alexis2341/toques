@@ -2,3 +2,64 @@ p {
     font-family: verdana;
     font-size: 20px;
   }
+body{
+  background-color: #222831;
+}
+.modal-footer, .modal-header{
+  background-color: #31363F;
+}
+.modal-title, .form-label, .form-control{
+  color: #EEEEEE;
+}
+
+.modal-body{
+  background-color: #222831;
+}
+
+.form-control{
+  background-color: #76ABAE;
+}
+.card-title, .card-text {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  padding: 20px;
+  border-radius: 10px;
+}
+.card-img-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.3); /* Fondo semitransparente para mejorar la legibilidad */
+  border-radius: 10px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 1px;
+}
+
+.card-text {
+  font-size: 0.9rem;
+}
+
+.card-text span {
+  font-size: 1rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 1000px; /* Ajusta según el tamaño deseado */
+  margin: auto;
+  position: relative;
+}
+
+.card-img {
+  height: 300px; /* Ajusta según el tamaño deseado */
+  object-fit: cover;
+  width: 100%;
+}
+
+.card-img-overlay {
+  align-items: flex-end; /* Alinea el contenido en la parte inferior */
+  text-align: right; /* Alinea el texto a la derecha */
+}

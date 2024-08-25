@@ -1,23 +1,4 @@
 
-// script.js
-document.getElementById('nuevoShowBtn').addEventListener('click', function() {
-    const showDate = prompt('Ingresa la fecha del nuevo show (formato: YYYY-MM-DD HH:MM:SS)');
-  
-    if (showDate) {
-      const showCard = document.createElement('div');
-      showCard.className = 'card bg-dark text-white mt-3';
-      showCard.innerHTML = `
-        <img class="card-img" src="gd.jpg" alt="Card image">
-        <div class="card-img-overlay">
-          <h5 class="card-title">Nuevo Show</h5>
-          <p class="card-text" id="countdown-${showDate}">Falta para el show: <span id="countdownTimer-${showDate}"></span></p>
-        </div>
-      `;
-      document.getElementById('showsContainer').appendChild(showCard);
-  
-      startCountdown(showDate);
-    }
-  });
   
   function startCountdown(showDate) {
     const showTime = new Date(showDate).getTime();
@@ -38,4 +19,39 @@ document.getElementById('nuevoShowBtn').addEventListener('click', function() {
         document.getElementById(countdownId).innerHTML = '¡El show ha comenzado!';
       }
     }, 1000);
+  }
+
+
+
+
+
+
+
+  function agregarShow(){
+    const agregarAlDiv = document.getElementById("contenedorDeShows")
+    const nuevoShowModal = document.getElementById("nuevoShowModal")
+    const nombreShow = document.getElementById("showName").value
+    const fechaShow = document.getElementById("showDate").value
+    const imgShow = document.getElementById("showImage").value
+    let agregar = ""
+    if (nombreShow === "" || fechaShow === ""  || imgShow === ""){
+      alert("faltan completar datos")
+    }else{
+
+    agregar += `<div class ="card bg-dark text-white mt-3">
+        <img class="card-img" src="` +imgShow+`" alt="Card image">
+        <div class="card-img-overlay">
+          <h5 class="card-title">${nombreShow}</h5>
+          <p class="card-text" id="countdown-${fechaShow}"><small>Falta para el show: </small><span id="countdownTimer-${fechaShow}"></span></p>
+          <p class="card-text" id="countdown-${fechaShow}"><small>Fecha del show: ${fechaShow} </small><span id="countdownTimer-${fechaShow}"></span></p>
+        </div>
+                </div>
+      `;
+
+
+      startCountdown(fechaShow)
+    agregarAlDiv.innerHTML += agregar
+    const modal = bootstrap.Modal.getInstance(nuevoShowModal);
+    modal.hide();
+    }
   }
