@@ -1,0 +1,1 @@
+INSERT INTO shows (name, date, image_url) VALUES ('Nombre del Show', '2024-10-01', 'https://url-de-la-imagen.com/imagen.jpg');
